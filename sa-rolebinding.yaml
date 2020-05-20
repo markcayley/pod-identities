@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: aad-pod-id-mic-service-account-binding
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: lab3-admin
+subjects:
+- kind: ServiceAccount
+  name: aad-pod-id-mic-service-account
+  namespace: default
